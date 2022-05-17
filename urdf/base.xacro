@@ -28,7 +28,7 @@
     the mesh pose will have to be corrected below in the <visual> block.
     Open the meshes for the RexROV vehicle in Blender to see an example on the mesh placement.
   -->
-  <xacro:property name="visual_mesh_file" value="file://$(find divy2_description)/meshes/divy_base_no_propeller_modif3.dae"/>
+  <xacro:property name="visual_mesh_file" value="file://$(find divy2_description)/meshes/Fdivy.dae"/>
 
   <!-- Collision geometry mesh, usually in STL format (it is recommended to keep
   this geometry as simple as possible to improve the performance the physics engine
