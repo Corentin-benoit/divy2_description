@@ -25,7 +25,7 @@ mesh_filename="file://$(find rexrov2_description)/meshes/Propeller.dae"
       thruster_id="${thruster_id}"
         mesh_filename="file://$(find divy2_description)/meshes/propeller.dae"
       dyn_time_constant="0.05"
-      rotor_constant="0.026546960744430276">
+      rotor_constant="0.1">
       <xacro:insert_block name="origin"/>
     </xacro:thruster_module_first_order_basic_fcn_macro>
   </xacro:macro>

@@ -2,10 +2,10 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <!-- Center of buoyancy -->
-    <xacro:property name="divy2_cob" value="-0.004150 -0.000219 -0.036355"/>
+    <xacro:property name="divy2_cob" value="-0.004148 0.000012 -0.036619"/>
 
     <!-- Vehicle's actual volume (Gazebo cannot compute the volume out of the mesh) -->
-    <xacro:property name="divy2_volume" value="0.0199420"/>
+    <xacro:property name="divy2_volume" value="0.019942"/>
 
     <!-- Describing the dimensions of the vehicle's bounding box -->
     <xacro:property name="divy2_length" value="0.47307"/>
@@ -43,6 +43,7 @@
         -->
 
         <!-- 1) Fossen's equation of motion -->
+
         <hydrodynamic_model>
           <type>fossen</type>
           <added_mass>
@@ -53,6 +54,20 @@
            -165.54 -5.8488 -386.42 -10.027  842.69 -1.1162
            -7.8033  62.726  10.775  21.019 -1.1162  224.32
           </added_mass>
+
+          <!--
+          <hydrodynamic_model>
+            <type>fossen</type>
+            <added_mass>
+              1.7182 0 0 0 0 0
+              0 0 0 0 0 0
+              0 0 5.468 0 0 0
+              0 0 0 0 0 0
+              0 0 0 0 1.2481 0
+              0 0 0 0 0 0.4006
+            </added_mass>
+            -->
+
           <!--
             The linear damping coefficients can be provided as a diagonal (6 elements)
             or a full matrix (36 coefficients), like the added-mass coefficients above

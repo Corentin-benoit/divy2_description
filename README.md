@@ -6,6 +6,7 @@
 
 - Terminal 1 : roscore (Communication des noeuds)
 - Terminal 2 : roslaunch uuv_gazebo_worlds empty_underwater_world.launch (Démarre l'environnement de simulation)
+- (OU de préférence) roslaunch uuv_gazebo_worlds ocean_waves.launch
 - Terminal 3 : roslaunch divy2_description upload_divy2.launch (Simulation du robot)
 
 

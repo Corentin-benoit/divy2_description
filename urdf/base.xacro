@@ -15,8 +15,8 @@
   <!--
     Vehicle's parameters (remember to enter the model parameters below)
   -->
-
-  <xacro:property name="mass" value="10.3481054124272"/>
+  <xacro:property name="mass" value="12.647150"/>
+  <!--<xacro:property name="mass" value="10.3481054124272"/> -->
   <!-- Center of gravity -->
   <!-- <xacro:property name="cog" value="0 0 0"/> -->
   <!-- Fluid density -->
@@ -28,7 +28,7 @@
     the mesh pose will have to be corrected below in the <visual> block.
     Open the meshes for the RexROV vehicle in Blender to see an example on the mesh placement.
   -->
-  <xacro:property name="visual_mesh_file" value="file://$(find divy2_description)/meshes/Fdivy.dae"/>
+  <xacro:property name="visual_mesh_file" value="file://$(find divy2_description)/meshes/Fdivy_color.dae"/>
 
   <!-- Collision geometry mesh, usually in STL format (it is recommended to keep
   this geometry as simple as possible to improve the performance the physics engine
@@ -56,12 +56,12 @@
           A VERIFIER
         -->
           <inertia
-          ixx="0.0492677110434437"
-          ixy="-0.00016910155817298"
-          ixz="-6.99314826205029E-05"
-          iyy="0.0507820794986514"
-          iyz="-3.82177497348897E-06"
-          izz="0.0455384747944849" />
+          ixx="0.350294"
+          ixy="-0.003760"
+          ixz="-0.011935"
+          iyy="0.422754"
+          iyz="-0.000109"
+          izz="0.324846" />
         </inertial>
 
         <!-- This visual geometry representation can be used when running
@@ -77,7 +77,7 @@
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry>
-            <box size="2.56 1.50 0.40"/>
+            <box size="1 1 1"/>
           </geometry>
         </collision>
       </link>
