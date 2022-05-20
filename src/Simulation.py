@@ -42,7 +42,7 @@ def commande_to_param( commande_vect ) :
 def Gazebo_Publisher():
 
      #"manette" compris entre -100 et 100
-     #commande_vect = [0,20,-10,0,0,0]
+     commande_vect = [0,20,0,0,0,0]
 
      pourcentage = commande_vect[0]
 

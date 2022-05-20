@@ -50,15 +50,18 @@ def vecteur_callback(vect):
      rospy.loginfo(iteration_geom)
      iteration_geom = iteration_geom+1
 
-     if (not started):
-        rospy.loginfo('Started = true')
-        started = True
+     #if (not started):
+     rospy.loginfo('Started = true')
+     started = True
 
 #attente pour publish = non suprposition des commandes ROS
 def timer_callback(event):
     global started, message_publisher, commande_vect
 
+    print("dans timer callbakc")
+
     if (started):
+        print("dansleif")
         # calcul des param articulaires à partir du vecteur de commandes de la manette
         pourcentage = commande_vect[0]
 
@@ -82,7 +85,7 @@ def timer_callback(event):
                 newmat[i]=matrice_result[i]*pourcentage/valMax
 
         rospy.init_node("gazebo", anonymous=True) #Setting anonymous=True will append random integers at the end of our publisher node
-        rate = rospy.Rate(1)
+        #rate = rospy.Rate(1)
         iteration = 1
 
 
@@ -140,7 +143,7 @@ def timer_callback(event):
 
         rospy.loginfo("\n-------------------------\n")
 
-        rate.sleep() #will wait enough until the node publishes the message to the topic
+        #rate.sleep() #will wait enough until the node publishes the message to the topic
         iteration = iteration +1
 
 
@@ -151,8 +154,10 @@ def vectSubscriber():
 
      #This is to subscribe to the messages from the topic named 'messageTopic'
      rospy.Subscriber("commande_envoyee", Float64MultiArray, vecteur_callback)
-
-     timer = rospy.Timer(rospy.Duration(0.1), timer_callback)
+     print("before timer")
+     timer = rospy.Timer(rospy.Duration(1), timer_callback)
+     timer_callback(1);
+     print("after timer")
 
      #rospy.spin() stops the node from exitind until the node has been shut down
      rospy.spin()
